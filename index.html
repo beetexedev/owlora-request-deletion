@@ -1,59 +1,167 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Learn how to delete your Owlora account and what happens to your data.">
   <meta name="theme-color" content="#7C3AED">
   <title>Delete Your Account — Owlora</title>
   <style>
-    :root{color-scheme:light dark;--purple:#7C3AED;--link:#5B21B6;--ink:#1F2937;--muted:#6B7280;--body:#4B5563;--border:#E5E7EB;--bg:#F9FAFB;--surface:#FFFFFF;--soft:#F5F3FF;--soft-border:#DDD6FE;--warn:#FFFBEB;--warn-border:#F59E0B}
-    @media (prefers-color-scheme:dark){:root{--link:#C4B5FD;--ink:#F3F4F6;--muted:#9CA3AF;--body:#D1D5DB;--border:#4B5563;--bg:#1F2937;--surface:#374151;--soft:#3B3552;--soft-border:#5B4A8B;--warn:#3A3220;--warn-border:#D97706}}
-    *{box-sizing:border-box}
-    body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.65 Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif}
-    header{background:var(--purple);color:#fff;text-align:center;padding:38px 20px 34px}
-    .owl{width:56px;height:56px;margin:0 auto 10px;display:grid;place-items:center;border:1px solid #ffffff70;border-radius:18px;background:#ffffff20;font-size:29px}
-    .brand{margin:0;font-size:30px;font-weight:750;letter-spacing:-.7px}
-    .tagline{margin:3px 0 0;color:#ffffffdf;font-size:14px}
-    main{width:min(760px,calc(100% - 32px));margin:32px auto 48px}
-    .card{background:var(--surface);border:1px solid var(--border);border-radius:24px;padding:clamp(22px,5vw,40px);box-shadow:0 8px 30px #1f29370a}
-    .eyebrow{color:var(--link);text-transform:uppercase;letter-spacing:1.3px;font-size:12px;font-weight:750;margin:0 0 8px}
-    h1{font-size:clamp(28px,5vw,36px);line-height:1.2;margin:0 0 14px;letter-spacing:-.8px}
-    h2{font-size:19px;line-height:1.35;margin:28px 0 10px}
-    p{margin:10px 0}
-    .intro{font-size:17px;color:var(--body)}
-    .steps{background:var(--soft);border:1px solid var(--soft-border);border-radius:16px;padding:18px 20px;margin:18px 0}
-    ol,ul{padding-left:22px}
-    li{padding-left:4px;margin:7px 0}
-    .timeline{list-style:none;padding:0;margin:14px 0}
-    .timeline li{display:flex;gap:12px;padding:12px 14px;margin:8px 0;border:1px solid var(--border);border-radius:14px}
-    .timeline .when{flex:0 0 108px;font-weight:750;color:var(--link)}
-    .warning{background:var(--warn);border-left:4px solid var(--warn-border);border-radius:10px;padding:13px 15px;margin:18px 0}
-    a{color:var(--link);font-weight:700;overflow-wrap:anywhere}
-    a:focus-visible{outline:3px solid #A78BFA;outline-offset:3px}
-    footer{text-align:center;color:var(--muted);font-size:13px;padding:0 20px 28px}
-    @media (max-width:520px){.timeline li{flex-direction:column;gap:2px}.timeline .when{flex:none}}
+    :root {
+      color-scheme: light dark;
+      --owlora-purple: #7C3AED;
+      --link: #6330c8;
+      --text: #24212b;
+      --muted: #625d6b;
+      --border: #e8e4ee;
+      --bg: #f7f6fa;
+      --surface: #ffffff;
+      --soft: #f8f6fc;
+      --tint: #fbf9ff;
+      --tint-border: #e5dcff;
+      --brand-bg: #f0eaff;
+      --warn: #fffbeb;
+      --warn-border: #f59e0b;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --link: #c4b5fd;
+        --text: #f3f4f6;
+        --muted: #9ca3af;
+        --border: #4b5563;
+        --bg: #1f2937;
+        --surface: #374151;
+        --soft: #2d3644;
+        --tint: #3b3552;
+        --tint-border: #5b4a8b;
+        --brand-bg: #4c3d7a;
+        --warn: #3a3220;
+        --warn-border: #d97706;
+      }
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font: 16px/1.7 system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    }
+    .page {
+      width: min(900px, calc(100% - 32px));
+      margin: 40px auto;
+      padding: clamp(24px, 5vw, 56px);
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      box-shadow: 0 12px 40px rgb(34 20 60 / 6%);
+    }
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 18px;
+      color: var(--owlora-purple);
+      font-weight: 750;
+      letter-spacing: .02em;
+    }
+    @media (prefers-color-scheme: dark) { .brand { color: #c4b5fd; } }
+    .brand-mark {
+      display: inline-grid;
+      width: 36px;
+      height: 36px;
+      place-items: center;
+      border-radius: 11px;
+      background: var(--brand-bg);
+      font-size: 20px;
+    }
+    h1, h2 { line-height: 1.25; }
+    h1 {
+      margin: 0 0 12px;
+      font-size: clamp(2rem, 5vw, 2.8rem);
+      font-weight: 800;
+      letter-spacing: -.035em;
+    }
+    h2 {
+      margin: 34px 0 12px;
+      font-size: 1.35rem;
+      font-weight: 750;
+      letter-spacing: -.015em;
+    }
+    p { margin: 10px 0 16px; }
+    .meta { color: var(--muted); margin-bottom: 28px; }
+    .meta p { margin: 2px 0; }
+    .intro { font-size: 1.05rem; }
+    ul, ol { padding-left: 24px; }
+    li { margin: 8px 0; }
+    .callout {
+      padding: 20px 22px;
+      margin: 18px 0;
+      border: 1px solid var(--tint-border);
+      border-radius: 16px;
+      background: var(--tint);
+    }
+    .callout ol { margin: 0; }
+    .timeline { list-style: none; padding: 0; margin: 14px 0; }
+    .timeline li {
+      display: flex;
+      gap: 14px;
+      padding: 14px 16px;
+      margin: 10px 0;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      background: var(--soft);
+    }
+    .timeline .when { flex: 0 0 120px; font-weight: 750; color: var(--link); }
+    .warning {
+      padding: 14px 16px;
+      margin: 22px 0;
+      border-left: 4px solid var(--warn-border);
+      border-radius: 10px;
+      background: var(--warn);
+    }
+    a { color: var(--link); text-underline-offset: 3px; overflow-wrap: anywhere; }
+    a:focus-visible { outline: 3px solid #bca4ff; outline-offset: 3px; }
+    footer {
+      margin-top: 36px;
+      padding-top: 18px;
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+      font-size: .9rem;
+    }
+    @media (max-width: 600px) {
+      .page { width: 100%; margin: 0; padding: 24px 20px 32px; border: 0; border-radius: 0; }
+      body { font-size: 15px; }
+      .callout { padding: 16px; }
+      .timeline li { flex-direction: column; gap: 2px; }
+      .timeline .when { flex: none; }
+    }
+    @media print {
+      :root { color-scheme: light; }
+      body { background: white; color: black; }
+      .page { width: 100%; margin: 0; padding: 0; border: 0; box-shadow: none; }
+    }
   </style>
 </head>
 <body>
-  <header>
-    <p class="brand">Owlora</p>
-    <p class="tagline">Your study companion</p>
-  </header>
-  <main><article class="card">
-    <p class="eyebrow">Account &amp; privacy</p>
-    <h1>Delete your Owlora account</h1>
-    <p class="intro">You can delete your Owlora: Your Study Companion account directly in the app. If you can't access the app, you can ask us by email instead.</p>
+  <main class="page">
+    <div class="brand"><span class="brand-mark" aria-hidden="true">🦉</span> Owlora</div>
+    <h1>Delete Your Account</h1>
+    <div class="meta">
+      <p><strong>Last updated:</strong> November 1, 2026</p>
+      <p><strong>Applies to:</strong> the Owlora: Your Study Companion app</p>
+    </div>
+
+    <p class="intro">You can delete your Owlora account directly in the app. If you can't access the app, you can ask us by email instead.</p>
 
     <section aria-labelledby="steps-heading">
       <h2 id="steps-heading">How to delete your account</h2>
-      <div class="steps"><ol>
+      <div class="callout"><ol>
         <li>Open <strong>Owlora: Your Study Companion</strong>.</li>
         <li>Go to <strong>Settings</strong> → <strong>Account</strong>.</li>
         <li>Tap <strong>Delete account</strong>.</li>
         <li>Read the confirmation message and tap <strong>Delete Account</strong> to confirm.</li>
       </ol></div>
-      <p>If you can't sign in or no longer have access to the app, email <a href="mailto:beetexe.dev@gmail.com?subject=Owlora%20Account%20Deletion">beetexe.dev@gmail.com</a> with the subject <strong>Owlora Account Deletion</strong>, from the email address linked to your account. We may ask you to verify that you own the account before processing the request.</p>
+      <p>If you can't sign in or no longer have access to the app, email <a href="mailto:beetexe.dev@gmail.com?subject=Owlora%20Account%20Deletion"><strong>beetexe.dev@gmail.com</strong></a> with the subject <strong>Owlora Account Deletion</strong>, from the email address linked to your account. We may ask you to verify that you own the account before processing the request.</p>
     </section>
 
     <section aria-labelledby="timeline-heading">
@@ -92,9 +200,12 @@
 
     <section aria-labelledby="contact-heading">
       <h2 id="contact-heading">Need help?</h2>
-      <p>For help with deleting your account, contact <a href="mailto:beetexe.dev@gmail.com?subject=Owlora%20Account%20Deletion">beetexe.dev@gmail.com</a>. For more about how we handle your data, see our Privacy Policy.</p>
+      <p>For help with deleting your account, contact <a href="mailto:beetexe.dev@gmail.com?subject=Owlora%20Account%20Deletion"><strong>beetexe.dev@gmail.com</strong></a>. For more about how we handle your data, see our Privacy Policy.</p>
     </section>
-  </article></main>
-  <footer>Owlora: Your Study Companion</footer>
+
+    <footer>
+      <p>© 2026 Owlora. All rights reserved.</p>
+    </footer>
+  </main>
 </body>
 </html>
