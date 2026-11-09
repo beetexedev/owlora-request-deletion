@@ -1,211 +1,142 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Learn how to delete your Owlora account and what happens to your data.">
-  <meta name="theme-color" content="#7C3AED">
-  <title>Delete Your Account — Owlora</title>
-  <style>
-    :root {
-      color-scheme: light dark;
-      --owlora-purple: #7C3AED;
-      --link: #6330c8;
-      --text: #24212b;
-      --muted: #625d6b;
-      --border: #e8e4ee;
-      --bg: #f7f6fa;
-      --surface: #ffffff;
-      --soft: #f8f6fc;
-      --tint: #fbf9ff;
-      --tint-border: #e5dcff;
-      --brand-bg: #f0eaff;
-      --warn: #fffbeb;
-      --warn-border: #f59e0b;
-    }
-    @media (prefers-color-scheme: dark) {
-      :root {
-        --link: #c4b5fd;
-        --text: #f3f4f6;
-        --muted: #9ca3af;
-        --border: #4b5563;
-        --bg: #1f2937;
-        --surface: #374151;
-        --soft: #2d3644;
-        --tint: #3b3552;
-        --tint-border: #5b4a8b;
-        --brand-bg: #4c3d7a;
-        --warn: #3a3220;
-        --warn-border: #d97706;
-      }
-    }
-    * { box-sizing: border-box; }
-    body {
-      margin: 0;
-      background: var(--bg);
-      color: var(--text);
-      font: 16px/1.7 system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-    }
-    .page {
-      width: min(900px, calc(100% - 32px));
-      margin: 40px auto;
-      padding: clamp(24px, 5vw, 56px);
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 24px;
-      box-shadow: 0 12px 40px rgb(34 20 60 / 6%);
-    }
-    .brand {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      margin-bottom: 18px;
-      color: var(--owlora-purple);
-      font-weight: 750;
-      letter-spacing: .02em;
-    }
-    @media (prefers-color-scheme: dark) { .brand { color: #c4b5fd; } }
-    .brand-mark {
-      display: inline-grid;
-      width: 36px;
-      height: 36px;
-      place-items: center;
-      border-radius: 11px;
-      background: var(--brand-bg);
-      font-size: 20px;
-    }
-    h1, h2 { line-height: 1.25; }
-    h1 {
-      margin: 0 0 12px;
-      font-size: clamp(2rem, 5vw, 2.8rem);
-      font-weight: 800;
-      letter-spacing: -.035em;
-    }
-    h2 {
-      margin: 34px 0 12px;
-      font-size: 1.35rem;
-      font-weight: 750;
-      letter-spacing: -.015em;
-    }
-    p { margin: 10px 0 16px; }
-    .meta { color: var(--muted); margin-bottom: 28px; }
-    .meta p { margin: 2px 0; }
-    .intro { font-size: 1.05rem; }
-    ul, ol { padding-left: 24px; }
-    li { margin: 8px 0; }
-    .callout {
-      padding: 20px 22px;
-      margin: 18px 0;
-      border: 1px solid var(--tint-border);
-      border-radius: 16px;
-      background: var(--tint);
-    }
-    .callout ol { margin: 0; }
-    .timeline { list-style: none; padding: 0; margin: 14px 0; }
-    .timeline li {
-      display: flex;
-      gap: 14px;
-      padding: 14px 16px;
-      margin: 10px 0;
-      border: 1px solid var(--border);
-      border-radius: 14px;
-      background: var(--soft);
-    }
-    .timeline .when { flex: 0 0 120px; font-weight: 750; color: var(--link); }
-    .warning {
-      padding: 14px 16px;
-      margin: 22px 0;
-      border-left: 4px solid var(--warn-border);
-      border-radius: 10px;
-      background: var(--warn);
-    }
-    a { color: var(--link); text-underline-offset: 3px; overflow-wrap: anywhere; }
-    a:focus-visible { outline: 3px solid #bca4ff; outline-offset: 3px; }
-    footer {
-      margin-top: 36px;
-      padding-top: 18px;
-      border-top: 1px solid var(--border);
-      color: var(--muted);
-      font-size: .9rem;
-    }
-    @media (max-width: 600px) {
-      .page { width: 100%; margin: 0; padding: 24px 20px 32px; border: 0; border-radius: 0; }
-      body { font-size: 15px; }
-      .callout { padding: 16px; }
-      .timeline li { flex-direction: column; gap: 2px; }
-      .timeline .when { flex: none; }
-    }
-    @media print {
-      :root { color-scheme: light; }
-      body { background: white; color: black; }
-      .page { width: 100%; margin: 0; padding: 0; border: 0; box-shadow: none; }
-    }
-  </style>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Delete Your Owlora Account</title>
+    <meta name="description" content="How to delete your Owlora: Your Study Companion account and what happens to your data." />
+    <style>
+        :root {
+            --bg: #ffffff;
+            --text: #1f2937;
+            --muted: #6b7280;
+            --primary: #7c3aed;
+            --card: #f7f4ff;
+            --border: #e5e7eb;
+        }
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg: #111827;
+                --text: #f3f4f6;
+                --muted: #9ca3af;
+                --primary: #a78bfa;
+                --card: #1f2937;
+                --border: #374151;
+            }
+        }
+        * { box-sizing: border-box; }
+        body {
+            margin: 0;
+            background: var(--bg);
+            color: var(--text);
+            font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+            line-height: 1.6;
+        }
+        main { max-width: 720px; margin: 0 auto; padding: 40px 16px 64px; }
+        h1 { font-size: 1.75rem; margin: 0 0 4px; }
+        h2 { font-size: 1.2rem; margin: 36px 0 12px; }
+        p, li { font-size: 1rem; }
+        .subtitle { color: var(--muted); margin: 0 0 24px; }
+        .card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 16px 20px;
+        }
+        ol, ul { padding-left: 1.25rem; margin: 0; }
+        li + li { margin-top: 6px; }
+        a { color: var(--primary); }
+        dl { margin: 0; }
+        dt { font-weight: 600; margin-top: 12px; }
+        dt:first-child { margin-top: 0; }
+        dd { margin: 2px 0 0; }
+        footer { margin-top: 40px; color: var(--muted); font-size: 0.9rem; }
+    </style>
 </head>
 <body>
-  <main class="page">
-    <div class="brand">Owlora</div>
-    <h1>Delete Your Account</h1>
-    <div class="meta">
-      <p><strong>Last updated:</strong> November 1, 2026</p>
-      <p><strong>Applies to:</strong> the Owlora: Your Study Companion app</p>
+<main>
+    <h1>Delete Your Owlora Account</h1>
+    <p class="subtitle">Owlora: Your Study Companion</p>
+
+    <h2>How to delete your account</h2>
+    <div class="card">
+        <ol>
+            <li>Open Owlora: Your Study Companion.</li>
+            <li>Go to <strong>Settings → Account</strong>.</li>
+            <li>Tap <strong>Delete account</strong>, then confirm.</li>
+        </ol>
     </div>
+    <p>
+        Want to keep a copy? Before deleting, export a backup in
+        <strong>Settings → Backup &amp; Restore</strong>.
+    </p>
+    <p>
+        If you can't sign in, email
+        <a href="mailto:beetexe.dev@gmail.com?subject=Owlora%20Account%20Deletion">beetexe.dev@gmail.com</a>
+        with the subject "Owlora Account Deletion" from the email linked to
+        your account. We may ask you to verify that the account is yours.
+    </p>
 
-    <p class="intro">You can delete your Owlora account directly in the app. If you can't access the app, you can ask us by email instead.</p>
+    <h2>What happens after you request deletion</h2>
+    <dl>
+        <dt>Immediately</dt>
+        <dd>
+            You're signed out on all devices, your notes, flashcards,
+            quizzes, and study plans are deleted from the phone you used, and
+            the account is scheduled for deletion.
+        </dd>
+        <dt>Within 7 days</dt>
+        <dd>
+            You can cancel by signing back in with the same Google account.
+            If you have Cloud Sync, your synced content is restored. Otherwise
+            you can restore it from a backup you exported.
+        </dd>
+        <dt>After 7 days</dt>
+        <dd>
+            The account is permanently deleted and this can't be undone.
+            Signing in later creates a new, empty account.
+        </dd>
+    </dl>
 
-    <section aria-labelledby="steps-heading">
-      <h2 id="steps-heading">How to delete your account</h2>
-      <div class="callout"><ol>
-        <li>Open <strong>Owlora: Your Study Companion</strong>.</li>
-        <li>Go to <strong>Settings</strong> → <strong>Account</strong>.</li>
-        <li>Tap <strong>Delete account</strong>.</li>
-        <li>Read the confirmation message and tap <strong>Delete Account</strong> to confirm.</li>
-      </ol></div>
-      <p>If you can't sign in or no longer have access to the app, email <a href="mailto:beetexe.dev@gmail.com?subject=Owlora%20Account%20Deletion"><strong>beetexe.dev@gmail.com</strong></a> with the subject <strong>Owlora Account Deletion</strong>, from the email address linked to your account. We may ask you to verify that you own the account before processing the request.</p>
-    </section>
+    <h2>What data is deleted</h2>
+    <ul>
+        <li>Synced study content: notes, folders, flashcards, quizzes, and study plans stored through Cloud Sync</li>
+        <li>Profile: name, email address, and profile photo</li>
+        <li>Remaining AI and scan credits, which are forfeited and non-refundable</li>
+        <li>Sign-in sessions on all devices</li>
+        <li>Study content stored on the phone you used to request deletion</li>
+    </ul>
 
-    <section aria-labelledby="timeline-heading">
-      <h2 id="timeline-heading">What happens after you request deletion</h2>
-      <ul class="timeline">
-        <li><span class="when">Right away</span><span>You're signed out of Owlora on all your devices, and your account is scheduled for deletion.</span></li>
-        <li><span class="when">Within 30 days</span><span>Changed your mind? Just sign back in with the same Google account and the deletion is cancelled — everything stays as it was.</span></li>
-        <li><span class="when">After 30 days</span><span>Your account is permanently deleted, as described below. This can't be undone, and signing in again later creates a brand-new, empty account.</span></li>
-      </ul>
-    </section>
-
-    <section aria-labelledby="deleted-heading">
-      <h2 id="deleted-heading">What data is deleted</h2>
-      <ul>
-        <li><strong>Your synced study content</strong> — all notes, folders, flashcards, quizzes, and study plans stored on our servers through Cloud Sync.</li>
-        <li><strong>Your profile</strong> — your name, email address, and profile photo are removed from your account.</li>
-        <li><strong>Your credits</strong> — any remaining AI and scan credits are forfeited and can't be refunded or transferred.</li>
-        <li><strong>Your sign-in sessions</strong> — all sign-ins on every device are ended.</li>
-      </ul>
-      <p><strong>Content on your phone:</strong> deleting your account doesn't remove content stored on your device. To remove it, uninstall Owlora or clear the app's data in your phone's settings. If you want to keep anything, save or export it before you delete your account.</p>
-    </section>
-
-    <div class="warning">
-      <strong>Your subscription isn't cancelled automatically.</strong> If you subscribe to Cloud Sync, cancel it in the Google Play Store (Profile → Payments &amp; subscriptions → Subscriptions) so you aren't charged again. Deleting your Owlora account alone doesn't stop Google Play billing.
-    </div>
-
-    <section aria-labelledby="retained-heading">
-      <h2 id="retained-heading">Data that is kept</h2>
-      <ul>
-        <li><strong>Purchase and credit transaction records</strong> are kept for accounting and legal purposes, but they're anonymized — after deletion they're no longer linked to your name or email.</li>
-        <li><strong>Server backups</strong> may contain your data for a short period (up to 7 days) before they're automatically overwritten.</li>
-        <li><strong>Google Play and RevenueCat</strong> keep their own records of your purchases under their respective privacy policies.</li>
-      </ul>
-      <p>We may also keep limited records where required by law, or where reasonably necessary to resolve disputes or prevent fraud and abuse — only for as long as needed for that purpose.</p>
-    </section>
-
-    <section aria-labelledby="contact-heading">
-      <h2 id="contact-heading">Need help?</h2>
-      <p>For help with deleting your account, contact <a href="mailto:beetexe.dev@gmail.com?subject=Owlora%20Account%20Deletion"><strong>beetexe.dev@gmail.com</strong></a>. For more about how we handle your data, see our Privacy Policy.</p>
-    </section>
+    <h2>What isn't deleted or is kept</h2>
+    <ul>
+        <li>
+            Your Cloud Sync subscription isn't cancelled automatically. Cancel
+            it in the Google Play Store under <strong>Payments &amp;
+            subscriptions → Subscriptions</strong>.
+        </li>
+        <li>
+            Content on other phones where you're signed in stays there until
+            you uninstall the app or clear its data.
+        </li>
+        <li>Purchase and credit records are kept but anonymized.</li>
+        <li>
+            Encrypted server backups may still contain your data for up to
+            30 days after deletion, then they're removed automatically.
+        </li>
+        <li>
+            Google Play and RevenueCat keep their own purchase records under
+            their privacy policies.
+        </li>
+        <li>
+            Some limited records may be kept where required by law, or to
+            resolve disputes or prevent fraud.
+        </li>
+    </ul>
 
     <footer>
-      <p>© 2026 Owlora. All rights reserved.</p>
+        Questions? Contact
+        <a href="mailto:beetexe.dev@gmail.com">beetexe.dev@gmail.com</a>.
     </footer>
-  </main>
+</main>
 </body>
 </html>
